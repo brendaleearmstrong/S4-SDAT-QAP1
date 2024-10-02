@@ -10,6 +10,7 @@ import com.keyin.service.PatientService;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -201,7 +202,7 @@ public class ClinicApp {
             String dateTimeString = scanner.nextLine();
             try {
                 appointmentDateTime = LocalDateTime.parse(dateTimeString, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
-            } catch (Exception e) {
+            } catch (DateTimeParseException e) {
                 System.out.println("Invalid date format. Please try again.");
             }
         }
