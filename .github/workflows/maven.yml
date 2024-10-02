@@ -36,9 +36,9 @@ jobs:
       - name: Generate Jacoco coverage report
         run: mvn jacoco:report
 
-      # Upload Jacoco report as a build artifact
+      # Upload Jacoco report as a build artifact using v3
       - name: Upload Jacoco report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: jacoco-report
           path: target/site/jacoco
