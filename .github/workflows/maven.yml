@@ -5,10 +5,12 @@ on:
     branches:
       - "main"
       - "dev"
+      - "testing"  # Include the testing branch
   pull_request:
     branches:
       - "main"
       - "dev"
+      - "testing"  # Include the testing branch
 
 jobs:
   build:
@@ -36,7 +38,7 @@ jobs:
       - name: Generate Jacoco coverage report
         run: mvn jacoco:report
 
-      # Upload Jacoco report as a build artifact using v3
+      # Upload Jacoco report as a build artifact
       - name: Upload Jacoco report
         uses: actions/upload-artifact@v3
         with:
