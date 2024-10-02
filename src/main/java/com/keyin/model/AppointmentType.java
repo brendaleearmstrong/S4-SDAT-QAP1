@@ -3,5 +3,7 @@ package com.keyin.model;
 public enum AppointmentType {
     CONSULTATION,
     FOLLOW_UP,
-    PROCEDURE;
+    PROCEDURE,
+    SURGERY,
+    WORKERSCOMP;
 }
