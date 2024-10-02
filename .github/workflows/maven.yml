@@ -1,16 +1,16 @@
-name: Java CI with Maven
+name: Java CI with Merge Prompt
 
 on:
   push:
     branches:
       - "main"
       - "dev"
-      - "testing"  # Include the testing branch
+      - "testing"
   pull_request:
     branches:
       - "main"
       - "dev"
-      - "testing"  # Include the testing branch
+      - "testing"
 
 jobs:
   build:
@@ -44,3 +44,28 @@ jobs:
         with:
           name: jacoco-report
           path: target/site/jacoco
+
+  notify:
+    runs-on: ubuntu-latest
+    needs: build
+    if: success()  # Only run if the tests pass
+
+    steps:
+      - name: Notify for Merge
+        run: |
+          echo "::set-output name=message::The 'testing' branch passed all tests and is ready to be merged into 'main'."
+        id: notify
+
+      # Optional step to create a comment in a pull request
+      - name: Create Comment on PR (Optional)
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.issues.createComment({
+              issue_number: ${{ github.event.pull_request.number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'The `testing` branch has passed all checks and is ready for merging into `main`!'
+            })
