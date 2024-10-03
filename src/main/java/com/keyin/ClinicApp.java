@@ -77,6 +77,8 @@ public class ClinicApp {
     private static void addNewPatient() {
         scanner.nextLine(); // Consume newline
         System.out.println("Enter patient details:");
+        System.out.print("Medical ID Number: ");
+        String medicalId = scanner.nextLine();  // Ensure Medical ID is collected
         System.out.print("Name: ");
         String name = scanner.nextLine();
         System.out.print("Phone: ");
@@ -84,7 +86,8 @@ public class ClinicApp {
         System.out.print("Email: ");
         String email = scanner.nextLine();
 
-        Patient patient = new Patient(name, phone, email);
+        // Correct the constructor to pass four arguments: Medical ID, Name, Phone, and Email
+        Patient patient = new Patient(medicalId, name, phone, email);
         patientService.addPatient(patient);
         System.out.println("Patient added successfully!");
     }
