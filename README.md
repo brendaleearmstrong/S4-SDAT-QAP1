@@ -193,14 +193,3 @@ This project follows a **trunk-based development workflow** with the following b
 **Brenda Armstrong**  
 **Keyin College, Software Development**  
 **SD10 Semester 4 - SDAT & DevOps**
-
----
-
-## **License**
-
-This project is licensed under the MIT License.
-```
-
----
-
-You can copy and paste this directly into your `README.md` file in your project repository. Let me know if you need any further changes or enhancements!
