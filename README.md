@@ -99,7 +99,6 @@ The project contains **25 unit tests** that cover:
 - **DoctorService**: Adding and retrieving doctors by name or specialization.
 - **AppointmentService**: Scheduling and retrieving appointments.
 - **Model Tests**: The `Patient`, `Doctor`, and `Appointment` models are tested for correct behavior of constructors, getters, and setters.
-- **CLI Tests**: The command-line interface for managing patients, doctors, and appointments is tested to ensure correctness.
 
 ### **JUnit 5 Testing Details**
 
