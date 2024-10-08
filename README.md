@@ -76,7 +76,7 @@ The project follows **CLEAN CODE** principles, ensuring that the code is well-st
 
 1. **Meaningful Naming**: All variables, methods, and classes are named clearly and descriptively to reflect their roles.
 2. **Single Responsibility Principle (SRP)**: Each class has one responsibility, such as managing patients, doctors, or appointments.
-3. **Modularization**: The project is divided into packages (`model`, `service`, `cli`), ensuring that different parts of the system are independent and reusable.
+3. **Modularization**: The project is divided into packages (`model`, `service`), ensuring that different parts of the system are independent and reusable.
 4. **Avoiding Code Duplication**: Common functionalities are encapsulated in reusable methods and classes.
 5. **Test-Driven Development**: Tests were written alongside the code, ensuring that all features work as expected.
 
